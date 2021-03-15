@@ -1,0 +1,32 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "init": "npm run migrate && npm run seed",
+    "seed": "npx sequelize-cli db:seed:all",
+    "migrate": "npx sequelize-cli db:migrate",
+    "reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate && npm run seed",
+    "swagger-autogen": "node swagger.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "sequelize": "^6.5.1",
+    "swagger-autogen": "^2.7.1",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
+  }
+}
