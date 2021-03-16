@@ -1,7 +1,7 @@
 # Node.js - Todo-List
 
-![](https://)
-> 網站連結 : https://
+![](https://github.com/ahwei777/for-GaGiO-README/blob/main/toods/todos.png?raw=true)
+> 網站連結 : https://todos.ahwei777.tw/login
 
 ## 索引
 - [簡介](#簡介)
@@ -13,7 +13,7 @@
 - [版本紀錄](#版本紀錄)
 
 ## 簡介
-使用框架 Express.js 練習的 todo-list
+使用框架 Express.js 練習的簡易 MVC 架構 todo-list。
 
 ## 使用技術
 - 後端框架
@@ -43,6 +43,7 @@
 ├── routes/                    # 子路由設定
 ├── seeders/                   # demo 資料
 ├── static/                    # 靜態資源（.css／.js／圖片）
+├── views/                     # 畫面模板（.hbs）
 ├── index.js                   # 程式主要入口點
 ├── package.json               # module 及 script 設定
 ├── package-lock.json
@@ -53,7 +54,7 @@
 
 1. clone 此專案至本機
 ``` 
-$ git clone https://github.com/ahwei777/GaGiO-backend.git
+$ git clone https://github.com/ahwei777/Node.js-Todo_list.git
 ```
 
 2. 安裝相依套件
@@ -95,17 +96,12 @@ SECRET='任意自訂字串'
 
 5. 於本機建立與 config.json 內同名資料庫
 
-6. 於資料庫中建立 table
+6. 於資料庫中建立 table 並插入初始 demo 資料
 ```
-$ npm run migrate
-```
-
-7. 於資料庫中插入初始 demo 資料
-```
-$ npm run seed
+$ npm run init
 ```
 
-8. 環境設置完畢，於本機運行專案（預設 port:8088）
+7. 環境設置完畢，於本機運行專案（預設 port：8088）
 ```
 $ npm run start
 ```
