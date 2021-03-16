@@ -96,7 +96,6 @@ function createTable(data) {
       author: 'Leo',
     },
   ];
-  console.log('data', data)
   var dataTemplate = data
     .map(function (d, i) {
       return `<tr>
@@ -117,7 +116,6 @@ function createTable(data) {
                 </tr>`;
     })
     .join('');
-    console.log('dataTemplate',dataTemplate)
   $('#to-do-list-table tbody').html(dataTemplate);
   $('.fa-trash-alt').on('click', (e) => {
     deleteTodo(e.target.id);
