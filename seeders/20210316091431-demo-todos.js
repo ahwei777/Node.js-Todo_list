@@ -14,6 +14,8 @@ module.exports = {
           level: 3,
           author: '傑夫',
           content: 'AA',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           to_do_id: '10002',
@@ -24,6 +26,8 @@ module.exports = {
           level: 8,
           author: 'Leo',
           content: 'BB',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           to_do_id: '10003',
@@ -34,6 +38,8 @@ module.exports = {
           level: 7,
           author: '小魚',
           content: 'CC',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           to_do_id: '10004',
@@ -44,6 +50,8 @@ module.exports = {
           level: 3,
           author: '傑夫',
           content: 'DD',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           to_do_id: '10005',
@@ -54,9 +62,10 @@ module.exports = {
           level: 5,
           author: 'Leo',
           content: 'QQ',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
-      {}
     );
   },
 
