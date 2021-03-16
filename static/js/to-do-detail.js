@@ -60,10 +60,8 @@ function checkPayloadFormat(payload){
 function updateToDoItem(){
     var payload = getPayload();
 
-    var toDoId = location.href.split("/").slice(-1)[0] ;
-
+    var toDoId = location.href.split("/").slice(-2)[0] ; // slice(-1)[0] 切到 "page" 沒辦法正確判斷
     var mode = toDoId === "create" ? "create" : "edit";
-
 
     var isValid = checkPayloadFormat(payload);
 

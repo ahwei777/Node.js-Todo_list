@@ -29,7 +29,7 @@
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <div class="logo mt-1"> <a href="/welcome">{{ templateName }} 您好 !</a></div>
+                <div class="logo mt-1"> <a href="/welcome">{{ account }} 您好 !</a></div>
             </div>
             <div class="sidebar-content">
                 <ul class="list-unstyled components">
@@ -76,10 +76,10 @@
                 <div class="box-s1">
                     
                     <div class="form-row d-flex justify-content-between border-bottom m-1">
-                        <h3 class="ml-2" id="title-to-do-id">{{ to_do_id }} 細項</h3>
+                        <h3 class="ml-2" id="title-to-do-id">{{ todoData.to_do_id }} 細項</h3>
                         <div class="form-group col-md-3">
                             <label class="col-form-label">建立 / 修改 時間 :  
-                                    <u id="de-created-time">{{ modified_time }}</u></label>
+                                    <u id="de-created-time"></u></label>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@
 
                         <div class="form-group col-md-3 mx-3">
                             <label class="col-form-label">主題</label>
-                            <input class="form-control" type="text"  id="subject" value="{{ subject }}"/>
+                            <input class="form-control" type="text"  id="subject" value="{{ todoData.subject }}"/>
                         </div>
 
                         <div class="form-group col-md-3 mx-3">
@@ -96,7 +96,7 @@
                             <div class="input-group" id="datetimepicker" data-target-input="nearest">
                                 <input type="text" class="form-control datetimepicker-input"
                                     data-target="#datetimepicker" id="reservation-time"
-                                    value="{{ reserved_time }}"
+                                    value="{{ todoData.reserved_time }}"
                                     />
                                 <div class="input-group-append" data-target="#datetimepicker"
                                     data-toggle="datetimepicker">
@@ -110,14 +110,14 @@
                         <div class="form-group col-md-3 mx-3">
                             <label class="col-form-label">簡介 </label>
                             <input class="form-control" 
-                                id="brief" value="{{brief}}"
+                                id="brief" value="{{todoData.brief}}"
                                 oninput="if(value.length>50)value=value.slice(0,50)" 
                                 type="text"  />
                         </div>
                         
                         <div class="form-group col-md-3 mx-3">
                             <label class="col-form-label">重要程度</label>
-                            <div id="level" style="font-size: 1.5rem;" value="{{ level }}">
+                            <div id="level" style="font-size: 1.5rem;" value="{{ todoData.level }}">
                                 <i index=0 class="far fa-bell bell-icon"></i>
                                 <i index=1 class="far fa-bell bell-icon"></i>
                                 <i index=2 class="far fa-bell bell-icon"></i>
@@ -134,7 +134,7 @@
 
                         <div class="form-group col-md-3 mx-3">
                             <label class="col-form-label">撰寫者</label>
-                            <select class="form-control" id="author" value="{{author}}">
+                            <select class="form-control" id="author" value="{{todoData.author}}">
                                 <option>傑夫</option>
                                 <option>Leo</option>
                                 <option>老K</option>
@@ -148,7 +148,7 @@
                         <div class="form-group col-md-9 mx-2 mb-5">
                             <label class="col-form-label" >內容</label>
                             <textarea rows="10" class="form-control" name="mention24" 
-                                data="{{ content }}"
+                                data="{{ todoData.content }}"
                                 id="content"></textarea>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
             </div>
         </div>
     </div>
-    <input type="hidden" id="to-do-id" value={{ to_do_id }}>
+    <input type="hidden" id="to-do-id" value={{ todoData.to_do_id }}>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
