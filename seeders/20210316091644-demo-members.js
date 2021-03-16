@@ -10,6 +10,8 @@ module.exports = {
       {
         account: 'jeff',
         passwd: hashResult,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
     ]);
   },
