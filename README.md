@@ -1,7 +1,7 @@
 # Node.js - Todo-List
 
 ![](https://github.com/ahwei777/for-GaGiO-README/blob/main/toods/todos.png?raw=true)
-> 網站連結 : https://todos.ahwei777.tw/login  
+> DEMO ： https://todos.ahwei777.tw/login  
 測試帳號： jeff / jeff
 
 ## 索引
@@ -11,7 +11,6 @@
 - [專案架構](#專案架構)
 - [專案安裝流程](#專案安裝流程)
 - [聲明](#聲明)
-- [版本紀錄](#版本紀錄)
 
 ## 簡介
 使用框架 Express.js 練習的簡易 MVC 架構 todo-list。
