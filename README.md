@@ -1,7 +1,8 @@
 # Node.js - Todo-List
 
 ![](https://github.com/ahwei777/for-GaGiO-README/blob/main/toods/todos.png?raw=true)
-> 網站連結 : https://todos.ahwei777.tw/login
+> 網站連結 : https://todos.ahwei777.tw/login  
+測試帳號： jeff / jeff
 
 ## 索引
 - [簡介](#簡介)

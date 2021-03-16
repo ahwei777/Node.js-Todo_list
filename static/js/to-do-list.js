@@ -27,10 +27,10 @@ function deleteTodo(id) {
   axios
     .delete(`/to-do-list/detail/${id}`)
     .then(function (response) {
-      if(response.data.message === "ok."){
-        alert("刪除成功！");
-        location.href = "/to-do-list/page";
-    };
+      if (response.data.message === 'ok.') {
+        alert('刪除成功！');
+        location.href = '/to-do-list/page';
+      }
     })
     .catch(function (err) {
       if (err.response && err.response.status === 404) {
@@ -38,6 +38,19 @@ function deleteTodo(id) {
         return;
       }
     });
+}
+
+function escapeHtml (str) {
+  if (typeof jQuery !== 'undefined') {
+    return jQuery('<div/>').text(str).html();
+  }
+  // No jQuery, so use string replace.
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/>/g, '&gt;')
+    .replace(/</g, '&lt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
 }
 
 function createTable(data) {
@@ -83,14 +96,14 @@ function createTable(data) {
       author: 'Leo',
     },
   ];
-
+  console.log('data', data)
   var dataTemplate = data
     .map(function (d, i) {
       return `<tr>
-                    <th scope="row">${d.to_do_id}</th>
-                    <td>${d.subject}</td>
-                    <td>${d.reserved_time}</td>
-                    <td><a href="/to-do-list/detail/${d.to_do_id}">${d.brief}</a></td>
+                    <th scope="row">${escapeHtml(d.to_do_id)}</th>
+                    <td>${escapeHtml(d.subject)}</td>
+                    <td>${escapeHtml(d.reserved_time)}</td>
+                    <td><a href="/to-do-list/detail/${escapeHtml(d.to_do_id)}">${escapeHtml(d.brief)}</a></td>
                     <td>
                         ${new Array(d.level)
                           .fill(0)
@@ -99,14 +112,14 @@ function createTable(data) {
                           })
                           .join('\n')}
                     </td>
-                    <td>${d.author}</td>
-                    <td><i class="fas fa-trash-alt" id=${d.id}></i></td>
+                    <td>${escapeHtml(d.author)}</td>
+                    <td><i class="fas fa-trash-alt" id=${escapeHtml(d.id)}></i></td>
                 </tr>`;
     })
     .join('');
-
+    console.log('dataTemplate',dataTemplate)
   $('#to-do-list-table tbody').html(dataTemplate);
   $('.fa-trash-alt').on('click', (e) => {
-    deleteTodo(e.target.id)
+    deleteTodo(e.target.id);
   });
 }
