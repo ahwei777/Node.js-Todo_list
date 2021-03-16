@@ -43,6 +43,7 @@ function checkPayloadFormat(payload){
     if(payload.brief.length===0)                     errMsg += "* 請輸入簡介 !\n";
     if(payload.level === 0)                          errMsg += "* 重要程度 請至少選 1 !\n";
     if(!payload.author || payload.author.length===0) errMsg += "* 請選擇撰寫者 !\n";
+    if(payload.content.length===0)                   errMsg += "* 請輸入內容 !\n";
 
     if(errMsg.length >0){
         alert(errMsg);
